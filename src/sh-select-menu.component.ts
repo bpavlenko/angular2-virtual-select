@@ -13,7 +13,8 @@ import {VirtualScrollComponent} from "./virtual-scroll";
                  *ngFor="let row of viewPortItems"
                  [class.selected]="selectedValues?.indexOf(row) !== -1"
                  (click)="toggleSelected(row)">
-              {{row.name || row}}
+                         <i class="dropdown-icon" [ngClass]="{'dropdown-icon-check': selectedValues?.indexOf(row) !== -1, 'dropdown-icon-check-empty':selectedValues?.indexOf(row) == -1}" ></i>
+                         <span>{{row.name || row}}</span>
             </div>
           </virtual-scroll>
         </div>`,
